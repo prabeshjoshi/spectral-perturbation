@@ -1,6 +1,8 @@
-# specperturb
+# spectral-perturbation
 
 Composable, reproducible perturbations for NIR, Raman and UV-Vis spectra.
+
+The Python package inside this repository is imported as `specperturb`.
 
 Use it to augment training sets, or to stress-test a calibration by injecting
 controlled, physically motivated distortions (scatter, baseline drift, noise,
