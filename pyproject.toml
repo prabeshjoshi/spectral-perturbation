@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "specperturb"
+version = "0.3.0"
+description = "Composable, reproducible perturbations for NIR, Raman and UV-Vis spectra"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "P. Joshi" }]
+keywords = ["spectroscopy", "chemometrics", "NIR", "Raman", "UV-Vis", "data augmentation", "robustness"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = ["numpy>=1.22", "scipy>=1.8", "scikit-learn>=1.6"]
+
+[project.optional-dependencies]
+monitor = ["chemotools>=0.2", "menelaus", "river", "mapie>=1.4"]
+dev = ["pytest>=7", "matplotlib", "pandas", "chemotools>=0.2", "menelaus", "river", "mapie>=1.4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/specperturb"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
